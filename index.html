@@ -19,13 +19,19 @@
     }
 
     .container {
-      display: inline-block;
+      display: block;
+      width: 60%;
       margin: 0 auto;
     }
 
     header {
       display: block;
     }
+
+    .clearfix {
+      clear: both;
+    }
+
 
     /*========================================*/
 
@@ -59,8 +65,6 @@
       height: 80px;
       width: 80px;
       float: right;
-      transition: all .25s;
-      transition-delay: all .3s ease-out;
     }
     #hamburger .inner {
       position: absolute;
@@ -78,6 +82,7 @@
       left: 0;
       right: 0;
       background: #333;
+      transition-delay: all .3s ease-out;
     }
     #hamburger .inner .bar:first-child {
       top: 0;
@@ -89,19 +94,21 @@
     #hamburger .inner .bar:last-child {
       top: 36px;
     }
-    #hamburger .inner:hover .bar:first-child {
+
+    /* Hover */
+    #hamburger:hover .inner .bar:first-child {
       top: -15px;
       opacity: 0;
     }
-    #hamburger .inner:hover .bar:last-child {
+    #hamburger:hover .inner .bar:last-child {
       top: 51px;
       opacity: 0;
     }
-    #hamburger .inner:hover .bar:nth-child(2) {
+    #hamburger:hover .inner .bar:nth-child(2) {
       transform-origin: center;
       transform: rotate( 45deg );
     }
-    #hamburger .inner:hover .bar:nth-child(3) {
+    #hamburger:hover .inner .bar:nth-child(3) {
       transform-origin: center;
       transform: rotate( -45deg );
     }
@@ -258,9 +265,11 @@
 
     <div id="animation_0"></div>
     <div id="animation_1"></div>
+    <div class="clearfix"></div>
     <div id="animation_2"></div>
     <div id="animation_3"></div>
     <div id="animation_4"></div>
+    <div class="clearfix"></div>
     <div id="animation_5">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatem ex corporis in eaque nobis quam laborum, provident culpa exercitationem blanditiis aperiam sapiente necessitatibus repellat labore, optio veniam, eum minima eveniet.</div>
     <div id="animation_6"></div>
     <div id="animation_7"></div>
