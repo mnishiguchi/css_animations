@@ -32,7 +32,6 @@
       clear: both;
     }
 
-
     /*========================================*/
 
     /*
@@ -47,7 +46,7 @@
       width: 80px;
       height: 80px;
       text-indent: -9999px;
-      background-image: url("../img/logo.png");
+      background-image: url("img/logo.png");
       background-repeat: no-repeat;
       background-size: 100%;
       margin: 0;
@@ -58,6 +57,8 @@
     /*
     Hamburger button
     */
+
+    /* Outer */
     #hamburger {
       background: #999;
       position: relative;
@@ -66,6 +67,8 @@
       width: 80px;
       float: right;
     }
+
+    /* Inner */
     #hamburger .inner {
       position: absolute;
       display: block;
@@ -74,6 +77,8 @@
       top: 15px;
       left: 15px;
     }
+
+    /* Bars */
     #hamburger .inner .bar {
       display: block;
       width: 45px;
@@ -82,7 +87,7 @@
       left: 0;
       right: 0;
       background: #333;
-      transition-delay: all .3s ease-out;
+      transition: all .3s ease-out;
     }
     #hamburger .inner .bar:first-child {
       top: 0;
@@ -95,7 +100,7 @@
       top: 36px;
     }
 
-    /* Hover */
+    /* Hover the outer */
     #hamburger:hover .inner .bar:first-child {
       top: -15px;
       opacity: 0;
@@ -107,10 +112,12 @@
     #hamburger:hover .inner .bar:nth-child(2) {
       transform-origin: center;
       transform: rotate( 45deg );
+      background: red;
     }
     #hamburger:hover .inner .bar:nth-child(3) {
       transform-origin: center;
       transform: rotate( -45deg );
+      background: red;
     }
 
     /*========================================*/
