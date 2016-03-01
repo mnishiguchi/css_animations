@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+
+  <title>
+    CSS animations
+  </title>
+
+  <style>
+
+    /** { border: 1px dotted red; }*/
+
+    body {
+      width: 100%;
+      height: 100%;
+      padding: 0;
+      margin: 0;
+    }
+
+    .container {
+      display: inline-block;
+      margin: 0 auto;
+    }
+
+    header {
+      display: block;
+    }
+
+    /*========================================*/
+
+    /*
+    Image replacement techniques (One of many)
+    --
+    Downside: Google may rule out this type of text from its search result.
+    Some developers hide a lot of text for SEO and hide it.
+    */
+    h1 {
+      position: relative;
+      display: inline-block;
+      width: 80px;
+      height: 80px;
+      text-indent: -9999px;
+      background-image: url("../img/logo.png");
+      background-repeat: no-repeat;
+      background-size: 100%;
+      margin: 0;
+    }
+
+    /*========================================*/
+
+    /*
+    Hamburger button
+    */
+    #hamburger {
+      background: #999;
+      position: relative;
+      display: inline-block;
+      height: 80px;
+      width: 80px;
+      float: right;
+      transition: all .25s;
+      transition-delay: all .3s ease-out;
+    }
+    #hamburger .inner {
+      position: absolute;
+      display: block;
+      width: 45px;
+      height: 45px;
+      top: 15px;
+      left: 15px;
+    }
+    #hamburger .inner .bar {
+      display: block;
+      width: 45px;
+      height: 9px;
+      position: absolute;
+      left: 0;
+      right: 0;
+      background: #333;
+    }
+    #hamburger .inner .bar:first-child {
+      top: 0;
+    }
+    #hamburger .inner .bar:nth-child(2),
+    #hamburger .inner .bar:nth-child(3) {
+      top: 18px;
+    }
+    #hamburger .inner .bar:last-child {
+      top: 36px;
+    }
+    #hamburger .inner:hover .bar:first-child {
+      top: -15px;
+      opacity: 0;
+    }
+    #hamburger .inner:hover .bar:last-child {
+      top: 51px;
+      opacity: 0;
+    }
+    #hamburger .inner:hover .bar:nth-child(2) {
+      transform-origin: center;
+      transform: rotate( 45deg );
+    }
+    #hamburger .inner:hover .bar:nth-child(3) {
+      transform-origin: center;
+      transform: rotate( -45deg );
+    }
+
+    /*========================================*/
+
+    /*
+    Colored squares before animation.
+    */
+    #animation_0,
+    #animation_1,
+    #animation_2,
+    #animation_3,
+    #animation_4,
+    #animation_5,
+    #animation_6,
+    #animation_7,
+    #animation_8,
+    #animation_9,
+    #animation_a,
+    #animation_b,
+    #animation_c,
+    #animation_d,
+    #animation_e,
+    #animation_f {
+      display: block;
+      height: 80px;
+      width: 80px;
+      float: left;
+      transition: all .25s;
+    }
+
+    /*========================================*/
+
+    #animation_0 {
+      background: purple;
+    }
+    #animation_0:hover {
+      height: 480px;
+    }
+
+    /*========================================*/
+
+    #animation_1 {
+      background: yellow;
+    }
+    #animation_1:hover {
+      width: 480px;
+    }
+
+    /*========================================*/
+
+    #animation_2 {
+      background: blue;
+    }
+    #animation_2:hover {
+      width: 300px;
+      height: 300px;
+      transform: rotate(45deg);
+    }
+
+    /*========================================*/
+
+    #animation_3 {
+      background: green;
+    }
+    #animation_3:hover {
+      width: 300px;
+      height: 300px;
+      transform: matrix(1.0, 2.0, 3.0, 4.0, 5.0, 6.0);
+    }
+
+    /*========================================*/
+
+    #animation_4 {
+      background: salmon;
+    }
+    #animation_4:hover {
+      width: 300px;
+      height: 300px;
+      transform: rotateZ(10deg);
+    }
+
+    /*========================================*/
+
+    #animation_5 {
+      background: rgba(0,0,0,.6);
+      color: rgba(0,0,0,0);
+    }
+    #animation_5:hover {
+      width: 300px;
+      height: 300px;
+      transform: scale3d(2.5, 1.2, 0.3);
+      color: white;
+      padding: 10px;
+    }
+
+    /*========================================*/
+
+    #animation_6 {
+      background: black;
+    }
+    #animation_6:hover {
+      width: 300px;
+      height: 300px;
+      transform: rotateZ(10deg);
+    }
+
+    /*========================================*/
+
+    #animation_7 {
+      background: pink;
+    }
+    #animation_7:hover {
+      width: 300px;
+      height: 300px;
+      transform: skewX(30deg);
+    }
+
+    /*========================================*/
+
+    #animation_8 {
+      background: #abc;
+    }
+    #animation_8:hover {
+      width: 0;
+      height: 0;
+      border-left: 40px solid transparent;
+      border-right: 40px solid transparent;
+      border-bottom: 80px solid black;
+    }
+
+    /*========================================*/
+
+  </style>
+</head>
+
+<body>
+
+  <div class="container">
+
+    <header>
+      <h1>LOGO</h1>
+
+      <div id="hamburger">
+        <div class="inner">
+          <span class="bar"></span>
+          <span class="bar"></span>
+          <span class="bar"></span>
+          <span class="bar"></span>
+        </div>
+      </div>
+    </header>
+
+    <div id="animation_0"></div>
+    <div id="animation_1"></div>
+    <div id="animation_2"></div>
+    <div id="animation_3"></div>
+    <div id="animation_4"></div>
+    <div id="animation_5">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatem ex corporis in eaque nobis quam laborum, provident culpa exercitationem blanditiis aperiam sapiente necessitatibus repellat labore, optio veniam, eum minima eveniet.</div>
+    <div id="animation_6"></div>
+    <div id="animation_7"></div>
+    <div id="animation_8"></div>
+    <div id="animation_9"></div>
+    <div id="animation_a"></div>
+    <div id="animation_b"></div>
+    <div id="animation_c"></div>
+    <div id="animation_d"></div>
+    <div id="animation_e"></div>
+    <div id="animation_f"></div>
+
+  </div><!-- /.container -->
+
+</body>
+</html>
